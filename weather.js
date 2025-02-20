@@ -56,8 +56,10 @@ function changeBackground(weatherDescription) {
     // Reset the background style first
     body.style.backgroundColor = '';
     body.style.backgroundImage = '';
-    body.style.backgroundSize = 'cover'; 
-
+    body.style.backgroundSize = 'cover';  // Ensures the image covers the screen
+    body.style.backgroundRepeat = 'no-repeat'; // Prevents image repetition
+    body.style.backgroundPosition = 'center'; // Centers the image on the screen
+    body.style.height = '100vh'; // Set height to 100% of the viewport (full screen)
 
 
     // Set background 
