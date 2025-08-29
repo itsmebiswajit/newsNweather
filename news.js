@@ -1,11 +1,11 @@
 const apiKey = 'pub_69525c5c19767a922b4c4a3eb449abb3bc424';
-const defaultImage = 'newss.jpg'; // URL of the default image
+const defaultImage = 'newss.jpg'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('country-select').addEventListener('change', fetchNews);
     document.getElementById('category-select').addEventListener('change', fetchNews);
 
-    fetchNews(); // Fetch the default category (Business) and country (India) on page load
+    fetchNews(); /
 });
 
 function fetchNews() {
@@ -21,17 +21,16 @@ function fetchNews() {
             return response.json();
         })
         .then(data => {
-            console.log(data); // Log the fetched news data
+            console.log(data);
             const newsTableBody = document.querySelector('#news-table tbody');
-            newsTableBody.innerHTML = ''; // Clear previous news articles
-
+            newsTableBody.innerHTML = ''; 
             data.results.forEach(article => {
-                if (article.description) { // Check if description is not null
+                if (article.description) {
                     const row = document.createElement('tr');
 
                     const imageCell = document.createElement('td');
                     const image = document.createElement('img');
-                    image.src = article.image_url || defaultImage; // Use default image if article image is not available
+                    image.src = article.image_url || defaultImage;
                     image.alt = 'Article image';
                     image.classList.add('news-image');
                     imageCell.appendChild(image);
@@ -94,3 +93,4 @@ function fetchNews() {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
