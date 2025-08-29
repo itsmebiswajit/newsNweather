@@ -1,4 +1,4 @@
-const apiKey = 'b926fc2baa6a89ec88186ec30c741630'; // Replace with your OpenWeatherMap API key
+const apiKey = 'b926fc2baa6a89ec88186ec30c741630'; 
 
 document.getElementById('get-weather').addEventListener('click', getWeather);
 
@@ -41,29 +41,25 @@ function updateWeatherInfo(data) {
     document.getElementById('sunset').innerText = `${setdate.toLocaleString()}`;
     document.getElementById('description').innerText = `Description: ${data.weather[0].description}`;
 
-    // Weather description for changing the background
     const weatherDescription = data.weather[0].description;
     console.log(weatherDescription);
 
-    // Change background based on the weather description
     changeBackground(weatherDescription);
 }
 
-// Function to change background based on weather description
 function changeBackground(weatherDescription) {
     const body = document.body;
 
     // Reset the background style first
     body.style.backgroundColor = '';
     body.style.backgroundImage = '';
-    body.style.backgroundSize = 'cover';  // Ensures the image covers the screen
-    body.style.backgroundRepeat = 'no-repeat'; // Prevents image repetition
-    body.style.backgroundPosition = 'center'; // Centers the image on the screen
-    body.style.height = '100vh'; // Set height to 100% of the viewport (full screen)
+    body.style.backgroundSize = 'cover';  
+    body.style.backgroundRepeat = 'no-repeat'; 
+    body.style.backgroundPosition = 'center'; 
+    body.style.height = '100vh';  
 
 
-    // Set background 
-    if (weatherDescription.includes('clear')) {
+     if (weatherDescription.includes('clear')) {
         body.style.backgroundImage = 'url("clear.png")'; // Image for clear sky
     } 
     
@@ -78,23 +74,23 @@ function changeBackground(weatherDescription) {
     } 
     
     else if (weatherDescription.includes('thunderstorm')) {
-        body.style.backgroundImage = 'url("thunder.jpg")'; // Image for thunderstorm           .............
+        body.style.backgroundImage = 'url("thunder.jpg")'; // Image for thunderstorm       
     } 
     
     else if (weatherDescription.includes('snow')) {
-        body.style.backgroundImage = 'url("snowfall.png")'; // Image for snow                 ...............
+        body.style.backgroundImage = 'url("snowfall.png")'; // Image for snow                 
     } 
     
     else if (weatherDescription.includes('mist') || weatherDescription.includes('haze')) {
-        body.style.backgroundImage = 'url("haze.jpg")'; // Image for mist                  ...........
+        body.style.backgroundImage = 'url("haze.jpg")'; // Image for mist                   
     } 
     
     else if (weatherDescription.includes('drizzle')) {
-        body.style.backgroundImage = 'url("drizzle.png")'; // Image for drizzle                 ...............
+        body.style.backgroundImage = 'url("drizzle.png")'; // Image for drizzle                
     } 
     
     else if (weatherDescription.includes('overcast')) {
-        body.style.backgroundImage = 'url("overcast.png")'; // Image for overcast                 ...............
+        body.style.backgroundImage = 'url("overcast.png")'; // Image for overcast                 
     } 
   
     
@@ -102,3 +98,4 @@ function changeBackground(weatherDescription) {
         body.style.backgroundImage = 'url("default.jpg")'; // Default background image
     }
 }
+
