@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('country-select').addEventListener('change', fetchNews);
     document.getElementById('category-select').addEventListener('change', fetchNews);
 
-    fetchNews(); /
+    fetchNews(); 
 });
 
 function fetchNews() {
@@ -93,4 +93,5 @@ function fetchNews() {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
 
